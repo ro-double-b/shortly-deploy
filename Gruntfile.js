@@ -85,9 +85,8 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-shell');
   grunt.loadNpmTasks('grunt-nodemon');
 
-  grunt.registerTask('server-dev', function (target) {
-    grunt.task.run([ 'nodemon', 'watch' ]);
-  });
+  grunt.registerTask('server-dev', [ 'nodemon', 'watch' ]);
+  
 
   ////////////////////////////////////////////////////
   // Main grunt tasks
@@ -103,14 +102,14 @@ module.exports = function(grunt) {
 
   grunt.registerTask('upload', function(n) {
     if (grunt.option('prod')) {
-      // add your production server task here
+      console.log('test this out')
     } else {
       grunt.task.run([ 'server-dev' ]);
     }
   });
 
   grunt.registerTask('deploy', [
-    'build', 'test', 'server-dev'
+    'build', 'test', 'upload'
   ]);
 
 
