@@ -1,4 +1,4 @@
-window.Shortly = Backbone.View.extend({ 
+window.Shortly = Backbone.View.extend({ // TEST THIS COMMENT REMOVALs
   template: Templates.layout,
 
   events: {
